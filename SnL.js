@@ -2,17 +2,12 @@ let currentT = 0;
 const players =[{name: "Player 1", pos: 0},
                 {name: "Player 2", pos: 0}];
 
-function setGameOver()
-{
-    window.location.reload();                   // refresh or reload game once finish
-}
-
 function turns() {
   var randNum = Math.floor(Math.random() * 6) + 1;
   var move = document.querySelector('.move');   // text for players movement
   var die = document.querySelector('.die');     // text for players die rolling
   var next = document.querySelector('.next');   // text for next player
-  die.textContent = players[currentT].name + " rolled for " + randNum;
+  die.textContent = players[currentT].name + " rolled for " + randNum + ".";
   players[currentT].pos += randNum;
 
   switch(players[currentT].pos){
@@ -43,3 +38,9 @@ function turns() {
   }
 
 }
+
+function setGameOver()
+{
+    window.location.reload();                   // refresh or reload game once finish
+}
+
